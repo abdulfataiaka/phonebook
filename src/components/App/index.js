@@ -1,5 +1,11 @@
+import ContactsPage from '../ContactsPage';
+
 const App = () => {
-    return <div>This is a phonebook application</div>
+    return (
+        <div className>
+            <ContactsPage />
+        </div>
+    )
 }
 
 export default App;
