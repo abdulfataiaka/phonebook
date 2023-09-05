@@ -1,0 +1,46 @@
+.contact {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin: 2.5rem auto 0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #C1C1C1;
+}
+
+.contact img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.contact .info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.6rem;
+}
+
+.contact .info span {
+    font-size: 1.3rem;
+
+}
+
+.contact .buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.6rem;
+}
+
+.contact .buttons button {
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    border-radius: 1rem;
+    font-size: 0.95rem;
+    background: #61AAD1;
+    padding: 0.6rem 1.5rem;
+}
+
+.contact .buttons button:nth-child(2) {
+    background: #FF8E8E;
+}
