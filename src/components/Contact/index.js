@@ -1,13 +1,12 @@
 import './styles.css';
-import AvatarImage from '../../images/avatar.jpeg';
 
-const Contact = () => {
+const Contact = (props) => {
     return (
         <div className="contact">
-            <img src={AvatarImage} alt="avatar" />
+            <img src={props.image} alt="avatar" />
             <div className="info">
-                <span>Aka Abdulfatai</span>
-                <span>090124532124</span>
+                <span>{props.name}</span>
+                <span>{props.phone}</span>
             </div>
             <div className="buttons">
                 <button>Edit</button>

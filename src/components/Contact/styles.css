@@ -1,11 +1,9 @@
 .contact {
     display: flex;
-    width: 30%;
-    justify-content: space-between;
-    margin: 2.5rem auto 0;
     padding: 1.5rem;
     border-radius: 0.5rem;
     border: 0.1rem solid #C1C1C1;
+    justify-content: space-between;
 }
 
 .contact img {
