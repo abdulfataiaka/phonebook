@@ -8,18 +8,6 @@ const ContactsPage = () => {
         <div>
             <Header />
             <div className="contact-list">
-                <div>First</div>
-                <div>Sdcond</div>
-                <div>Third</div>
-
-                {
-                    [
-                        <div>First</div>,
-                        <div>Sdcond</div>,
-                        <div>Third</div>,
-                    ]
-                }
-
                 {
                     contacts.map((contact, index) => {
                         return (
