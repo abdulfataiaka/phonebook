@@ -1,10 +1,9 @@
-import ContactsPage from '../ContactsPage';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 
 const App = () => {
     return (
-        <div className>
-            <ContactsPage />
-        </div>
+        <RouterProvider router={router} />
     )
 }
 
