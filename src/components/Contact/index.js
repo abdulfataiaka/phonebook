@@ -1,15 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
+import contacts from '../../mocks';
 
 const Contact = (props) => {
     const navigate = useNavigate();
 
-    const handleEdit = () => {
-        navigate('/upsert');
-    }
-
     const handleDelete = () => {
-        console.log('Delete button has been clicked');
+        const index = Number(props.id) - 1;
+        contacts.splice(index, 1);
     }
 
     return (
@@ -20,7 +18,9 @@ const Contact = (props) => {
                 <span>{props.phone}</span>
             </div>
             <div className="buttons">
-                <button onClick={handleEdit}>Edit</button>
+                <button onClick={(event) => { navigate(`/upsert/${props.id}`) }}>
+                    Edit
+                </button>
                 <button onClick={handleDelete}>Delete</button>
             </div>
         </div>

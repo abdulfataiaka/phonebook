@@ -6,6 +6,11 @@
     margin: 5rem auto;
 }
 
+.upsert-form-container .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .upsert-form-container img {
     width: 12rem;
     height: 12rem;

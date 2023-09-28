@@ -1,24 +1,36 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useParams, useNavigate } from 'react-router-dom'; 
 import './styles.css'
 import Header from '../Header';
 import contacts from '../../mocks';
 import PlaceholderImage from '../../images/placeholder.svg';
 
 const UpsertContactPage = () => {
+    const params = useParams();
+
+    const contactById = contacts.find((item) => {
+        return item.id == params.id;
+    });
+
     const navigate = useNavigate();
-    const [fullName, setFullName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [fullName, setFullName] = useState(contactById ? contactById.name : '');
+    const [phoneNumber, setPhoneNumber] = useState(contactById ? contactById.phone : '');
 
     const handleSave = (event) => {
         const contact = {
+            id: contactById ? contactById.id : contacts.length + 1,
             name: fullName,
             phone: phoneNumber,
-            image: PlaceholderImage,
+            image: contactById ? contactById.image : PlaceholderImage,
         }
 
-        // Save into the contacts list store
-        contacts.push(contact);
+        if (params.id === undefined) {
+            // Save into the contacts list store
+            contacts.push(contact);
+        } else {
+            // Logic for editing an existing contact
+            contacts[Number(params.id) - 1] = contact;
+        }
 
         // Redirect to the contact list page
         navigate('/');
@@ -38,7 +50,10 @@ const UpsertContactPage = () => {
         <div>
             <Header />
             <div className="upsert-form-container">
-                <img src={PlaceholderImage} alt="preview" />
+                <div className="title">
+                    {params.id === undefined ? 'Add' : 'Edit'} Contact
+                </div>
+                <img src={contactById ? contactById.image : PlaceholderImage} alt="preview" />
                 <input type="file" />
                 <input
                     onChange={handleFullNameChange}

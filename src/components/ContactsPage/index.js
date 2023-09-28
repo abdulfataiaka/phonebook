@@ -13,6 +13,7 @@ const ContactsPage = () => {
                         return (
                             <Contact
                                 key={index}
+                                id={contact.id}
                                 image={contact.image}
                                 name={contact.name}
                                 phone={contact.phone}

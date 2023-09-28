@@ -8,7 +8,7 @@ const router = createBrowserRouter([
         element: <ContactsPage />,
     },
     {
-        path: '/upsert',
+        path: '/upsert/:id?',
         element: <UpsertContactPage />,
     }
 ])
